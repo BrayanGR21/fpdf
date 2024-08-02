@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .table th, .table td {
+            text-align: left;
+        }
+        .total-row {
+            font-weight: bold;
+        }
+        .header, .footer {
+            margin-bottom: 20px;
+        }
+        .text-center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h4>Factura para:</h4>
+                    <p>Jordon Smith</p>
+                    <p>121 E Parkview St, IN 45240</p>
+                    <p>Toronto, Ontario</p>
+                    <p>Canada</p>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <h4>Pagar a:</h4>
+                    <p>Digital Invoico</p>
+                    <p>4510 E Dolphine St, IN 3526</p>
+                    <p>Hill Road, New York</p>
+                    <p>United States</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para descargar el PDF -->
+        <div class="text-center">
+            <button id="download-pdf" class="btn btn-primary">PDF</button>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Digital Marketing & SEO</td>
+                    <td>2</td>
+                    <td>$120</td>
+                    <td>$240.00</td>
+                </tr>
+                <tr>
+                    <td>Web Design & Development</td>
+                    <td>Desktop & Mobile Web App Design</td>
+                    <td>2</td>
+                    <td>$250</td>
+                    <td>$500.00</td>
+                </tr>
+                <tr>
+                    <td>UI/UX Design</td>
+                    <td>Mobile Android & iOS App Design</td>
+                    <td>1</td>
+                    <td>$80</td>
+                    <td>$80.00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="text-right">Sub Total</td>
+                    <td>$820.00</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-right">Impuesto (18%)</td>
+                    <td>$147.60</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="4" class="text-right">Total</td>
+                    <td>$967.60</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="footer">
+            <h4>Información adicional:</h4>
+            <p>A ut vitae nullam risus at. Justo enim nisi elementum ac. Massa molestie metus vitae ornare turpis donec odio sollicitudin. Ac ut tellus eu donec dictum risus blandit. Quam diam dictum amet.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRi2g50ew5i6UNnD6S9zF7G7NI2KxkLZwM5g1S2EV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-cwwY7pNtNZ/iobUEKf79X0JDgbUEdcWGpqfhxQAqhvFQQhEzy8C2InBEiM1GAkFi" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            window.location.href = 'generar_pdf.php';
+        });
+    </script>
+</body>
+</html>
